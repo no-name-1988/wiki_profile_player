@@ -8,15 +8,16 @@
   <style>
     :root{--bg:#f5f7fa;--card:#ffffff;--muted:#6b7280;--accent:#0b5cff;--border:#e6e9ef}
     body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#0b1220;margin:24px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 20px rgba(11,17,32,0.06);overflow:hidden}
-    header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
-    h1{font-size:16px;margin:0}
-    .meta{color:var(--muted);font-size:13px}
-    .controls{display:flex;gap:8px;align-items:center}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 20px rgba(11,17,32,0.06);overflow:hidden;margin-bottom:20px}
+    header{padding:16px 20px}
+    h1{font-size:18px;margin:0 0 4px 0}
+    .meta{color:var(--muted);font-size:14px}
+    .controls{display:flex;gap:8px;align-items:center;margin-bottom:12px}
     button{background:transparent;border:1px solid var(--border);padding:8px 10px;border-radius:8px;cursor:pointer;font-size:13px}
     button.primary{background:var(--accent);color:white;border-color:transparent}
+    .table-card{background:var(--card);border:1px solid var(--border);border-radius:10px;box-shadow:0 6px 20px rgba(11,17,32,0.06);overflow:hidden}
     .table-wrap{overflow:auto}
-    table{width:100%;border-collapse:collapse;font-size:14px}
+    table{width:100%;border-collapse:collapse;font-size:14px;min-width:720px}
     thead th{position:sticky;top:0;background:#fafbff;padding:12px 10px;border-bottom:1px solid var(--border);text-align:left;color:#111827}
     tbody tr{border-bottom:1px solid #f0f2f6}
     tbody td{padding:10px}
@@ -33,87 +34,86 @@
   </style>
 </head>
 <body>
-  <div class="card" role="region" aria-label="Pelé — Campeonato Paulista 1957/58 selected matches">
+  <!-- Header info -->
+  <div class="card">
     <header>
-      <div>
-        <h1>Pelé — Campeonato Paulista 1957/58 (selected matches)</h1>
-        <div class="meta">Season: 1957–1958 • Competition: Campeonato Paulista</div>
-      </div>
-      <div class="controls">
-        <input id="search" class="search" placeholder="Tìm ngày / đối thủ ..." />
-        <button id="download" class="primary">Tải file HTML</button>
-        <button id="csv">Xuất CSV</button>
-      </div>
-    </header><div class="table-wrap">
-  <table id="stats">
-    <thead>
-      <tr>
-        <th class="col-date">Thời gian</th>
-        <th class="col-club">Đá cho</th>
-        <th>Đối thủ</th>
-        <th class="col-venue">Sân</th>
-        <th>Tỉ số</th>
-        <th>Bàn thắng</th>
-        <th>Kiến tạo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="col-date">16/07/1958</td>
-        <td class="col-club">Santos</td>
-        <td>Jabaquara</td>
-        <td class="col-venue"><span class="chip">H</span></td>
-        <td>7–3</td>
-        <td>2</td>
-        <td class="muted">-</td>
-      </tr>
-      <tr>
-        <td class="col-date">20/07/1958</td>
-        <td class="col-club">Santos</td>
-        <td>Juventus</td>
-        <td class="col-venue"><span class="chip-away">A</span></td>
-        <td>0–2</td>
-        <td>1</td>
-        <td class="muted">-</td>
-      </tr>
-      <tr>
-        <td class="col-date">23/07/1958</td>
-        <td class="col-club">Santos</td>
-        <td>XV de Piracicaba</td>
-        <td class="col-venue"><span class="chip">H</span></td>
-        <td>6–0</td>
-        <td>2</td>
-        <td class="muted">-</td>
-      </tr>
-      <tr>
-        <td class="col-date">27/07/1958</td>
-        <td class="col-club">Santos</td>
-        <td>Botafogo</td>
-        <td class="col-venue"><span class="chip-away">A</span></td>
-        <td>2–2</td>
-        <td>2</td>
-        <td class="muted">-</td>
-      </tr>
-      <tr>
-        <td class="col-date">31/07/1958</td>
-        <td class="col-club">Santos</td>
-        <td>Comercial</td>
-        <td class="col-venue"><span class="chip-away">A</span></td>
-        <td>1–1</td>
-        <td>1</td>
-        <td class="muted">-</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="5">Tổng (5 trận)</td>
-        <td id="total-goals">8</td>
-        <td id="total-assists">-</td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-
+      <h1>Pelé</h1>
+      <div class="meta">Mùa giải: 1957–1958 • Giải đấu: Campeonato Paulista</div>
+    </header>
+  </div>  <!-- Controls -->  <div class="controls">
+    <input id="search" class="search" placeholder="Tìm ngày / đối thủ ..." />
+    <button id="download" class="primary">Tải file HTML</button>
+    <button id="csv">Xuất CSV</button>
+  </div>  <!-- Stats table -->  <div class="table-card">
+    <div class="table-wrap">
+      <table id="stats">
+        <thead>
+          <tr>
+            <th class="col-date">Thời gian</th>
+            <th class="col-club">Đá cho</th>
+            <th>Đối thủ</th>
+            <th class="col-venue">Sân</th>
+            <th>Tỉ số</th>
+            <th>Bàn thắng</th>
+            <th>Kiến tạo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-date">16/07/1958</td>
+            <td class="col-club">Santos</td>
+            <td>Jabaquara</td>
+            <td class="col-venue"><span class="chip">H</span></td>
+            <td>7–3</td>
+            <td>2</td>
+            <td class="muted">-</td>
+          </tr>
+          <tr>
+            <td class="col-date">20/07/1958</td>
+            <td class="col-club">Santos</td>
+            <td>Juventus</td>
+            <td class="col-venue"><span class="chip-away">A</span></td>
+            <td>0–2</td>
+            <td>1</td>
+            <td class="muted">-</td>
+          </tr>
+          <tr>
+            <td class="col-date">23/07/1958</td>
+            <td class="col-club">Santos</td>
+            <td>XV de Piracicaba</td>
+            <td class="col-venue"><span class="chip">H</span></td>
+            <td>6–0</td>
+            <td>2</td>
+            <td class="muted">-</td>
+          </tr>
+          <tr>
+            <td class="col-date">27/07/1958</td>
+            <td class="col-club">Santos</td>
+            <td>Botafogo</td>
+            <td class="col-venue"><span class="chip-away">A</span></td>
+            <td>2–2</td>
+            <td>2</td>
+            <td class="muted">-</td>
+          </tr>
+          <tr>
+            <td class="col-date">31/07/1958</td>
+            <td class="col-club">Santos</td>
+            <td>Comercial</td>
+            <td class="col-venue"><span class="chip-away">A</span></td>
+            <td>1–1</td>
+            <td>1</td>
+            <td class="muted">-</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">Tổng (5 trận)</td>
+            <td id="total-goals">8</td>
+            <td id="total-assists">-</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   </div>  <script>
     // Search/filter
     const search = document.getElementById('search');
@@ -125,6 +125,7 @@
         const text = row.textContent.toLowerCase();
         row.style.display = text.indexOf(q) !== -1 ? '' : 'none';
       });
+      recomputeTotals();
     });
 
     // CSV export
@@ -136,7 +137,7 @@
       const a = document.createElement('a'); a.href = url; a.download = 'pele_paulista_1957-58_selected.csv'; a.click(); URL.revokeObjectURL(url);
     });
 
-    // Download full HTML (exports current page as file)
+    // Download full HTML
     document.getElementById('download').addEventListener('click', ()=>{
       const doc = `<!doctype html>\n${document.documentElement.outerHTML}`;
       const blob = new Blob([doc],{type:'text/html;charset=utf-8'});
@@ -144,7 +145,7 @@
       const a = document.createElement('a'); a.href = url; a.download = 'pele_paulista_1957-58_selected.html'; a.click(); URL.revokeObjectURL(url);
     });
 
-    // Compute totals dynamically (in case of filtering)
+    // Compute totals dynamically
     function recomputeTotals(){
       let goals = 0; let assistsKnown = false; let assists = 0;
       Array.from(tbody.rows).forEach(row=>{
@@ -159,7 +160,5 @@
       document.getElementById('total-assists').textContent = assistsKnown ? assists : '-';
     }
     recomputeTotals();
-    // Recompute when searching
-    search.addEventListener('input', recomputeTotals);
   </script></body>
-        </html>
+                                    </html>
