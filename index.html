@@ -1,47 +1,88 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<title>Bảng kéo ngang - cơ bản</title>
-<style>
-  .table-responsive {
-    overflow-x: auto;               /* cho phép cuộn ngang */
-    -webkit-overflow-scrolling: touch; /* mượt trên iOS */
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
+  <meta charset="utf-8">
+  <title>Test bảng kéo ngang</title>
+  <style>
+    .table-responsive {
+      overflow-x: auto;               /* cho phép cuộn ngang */
+      -webkit-overflow-scrolling: touch; /* cuộn mượt trên iOS */
+      border: 1px solid #ddd;
+      padding: 8px;
+      max-width: 600px;              /* khung hiển thị nhỏ để thấy thanh cuộn */
+    }
 
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    min-width: 900px;               /* bắt buộc rộng hơn khung để xuất hiện cuộn */
-  }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 900px;              /* rộng hơn khung -> phải kéo ngang */
+    }
 
-  th, td {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    text-align: left;
-  }
+    th, td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
 
-  th { background: #f7f7f7; }
-</style>
+    th {
+      background: #f7f7f7;
+    }
+  </style>
 </head>
 <body>
+  <h2>Bảng kéo ngang - Test</h2>
 
-<div class="table-responsive">
-  <table>
-    <thead>
-      <tr>
-        <th>#</th><th>Tên</th><th>Quốc tịch</th><th>CLB</th><th>Mùa</th><th>Trận</th><th>Bàn</th><th>Kiến tạo</th><th>Ghi chú</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- nhiều hàng giả -->
-      <tr><td>1</td><td>Pele</td><td>Brazil</td><td>Santos</td><td>1962</td><td>45</td><td>30</td><td>10</td><td>Legend</td></tr>
-      <!-- ... -->
-    </tbody>
-  </table>
-</div>
-
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tên</th>
+          <th>Quốc tịch</th>
+          <th>CLB</th>
+          <th>Mùa</th>
+          <th>Trận</th>
+          <th>Bàn</th>
+          <th>Kiến tạo</th>
+          <th>Danh hiệu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Pelé</td>
+          <td>Brazil</td>
+          <td>Santos</td>
+          <td>1962</td>
+          <td>45</td>
+          <td>30</td>
+          <td>10</td>
+          <td>World Cup</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Messi</td>
+          <td>Argentina</td>
+          <td>Barcelona</td>
+          <td>2012</td>
+          <td>60</td>
+          <td>73</td>
+          <td>30</td>
+          <td>La Liga</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Mbappé</td>
+          <td>Pháp</td>
+          <td>PSG</td>
+          <td>2021</td>
+          <td>50</td>
+          <td>42</td>
+          <td>18</td>
+          <td>Ligue 1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
-                                                                                                                              </html>
+                       </html>
