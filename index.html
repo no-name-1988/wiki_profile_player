@@ -2,38 +2,14 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <title>Test bảng kéo ngang</title>
-  <style>
-    .table-responsive {
-      overflow-x: auto;               /* cho phép cuộn ngang */
-      -webkit-overflow-scrolling: touch; /* cuộn mượt trên iOS */
-      border: 1px solid #ddd;
-      padding: 8px;
-      max-width: 600px;              /* khung hiển thị nhỏ để thấy thanh cuộn */
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      min-width: 900px;              /* rộng hơn khung -> phải kéo ngang */
-    }
-
-    th, td {
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
-
-    th {
-      background: #f7f7f7;
-    }
-  </style>
+  <title>Test bảng kéo ngang không CSS</title>
 </head>
 <body>
-  <h2>Bảng kéo ngang - Test</h2>
+  <h2>Bảng kéo ngang - không CSS</h2>
 
-  <div class="table-responsive">
-    <table>
+  <!-- div này cho phép cuộn ngang -->
+  <div style="overflow-x:auto; border:1px solid #ccc; max-width:600px;">
+    <table border="1" cellpadding="8" style="min-width:900px;">
       <thead>
         <tr>
           <th>#</th>
@@ -85,4 +61,4 @@
     </table>
   </div>
 </body>
-                       </html>
+</html>
