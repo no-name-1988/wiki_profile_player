@@ -1,15 +1,16 @@
 <!doctype html>
-
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bảng thống kê (không dùng CSS)</title>
+  <meta charset="utf-8">
+  <title>Bảng thống kê cuộn ngang</title>
 </head>
 <body>
-  <h1>Bảng thống kê (không dùng CSS)</h1>
-  <p>Kéo ngang bằng thanh cuộn trình duyệt. (Không dùng CSS, không có nút cuộn)</p>  <!-- Bảng có chiều rộng lớn để gây ra thanh cuộn ngang của trình duyệt -->  <table border="1" width="2000" cellspacing="0" cellpadding="6">
-    <thead>
+  <h2>Bảng thống kê</h2>
+  <p>Kéo thanh cuộn ngang bên dưới bảng để xem các cột.</p>
+
+  <!-- Bọc bảng trong div có overflow-x để bảng tự cuộn -->
+  <div style="overflow-x: auto; width: 100%;">
+    <table border="1" cellspacing="0" cellpadding="6" style="min-width: 1000px;">
       <tr>
         <th>STT</th>
         <th>Tên</th>
@@ -25,19 +26,16 @@
         <th>Tháng 10</th>
         <th>Tổng</th>
       </tr>
-    </thead>
-    <tbody>
-      <tr><td>1</td><td>Nguyễn Văn A</td><td>120</td><td>98</td><td>134</td><td>150</td><td>110</td><td>140</td><td>125</td><td>130</td><td>145</td><td>160</td><td>1412</td></tr>
-      <tr><td>2</td><td>Trần Thị B</td><td>90</td><td>88</td><td>105</td><td>112</td><td>95</td><td>120</td><td>100</td><td>115</td><td>123</td><td>130</td><td>1078</td></tr>
-      <tr><td>3</td><td>Phạm Văn C</td><td>45</td><td>60</td><td>75</td><td>82</td><td>70</td><td>95</td><td>80</td><td>77</td><td>88</td><td>92</td><td>764</td></tr>
-      <tr><td>4</td><td>Hoàng Thị D</td><td>200</td><td>188</td><td>205</td><td>212</td><td>195</td><td>220</td><td>210</td><td>215</td><td>223</td><td>230</td><td>2198</td></tr>
-      <tr><td>5</td><td>Võ Minh E</td><td>30</td><td>28</td><td>35</td><td>40</td><td>32</td><td>38</td><td>36</td><td>34</td><td>39</td><td>41</td><td>353</td></tr>
-      <tr><td>6</td><td>Ngô Quốc F</td><td>78</td><td>82</td><td>91</td><td>95</td><td>88</td><td>102</td><td>97</td><td>99</td><td>105</td><td>110</td><td>947</td></tr>
-      <tr><td>7</td><td>Lê Thị G</td><td>150</td><td>145</td><td>158</td><td>162</td><td>149</td><td>170</td><td>160</td><td>168</td><td>175</td><td>182</td><td>1629</td></tr>
-      <tr><td>8</td><td>Đỗ Văn H</td><td>55</td><td>58</td><td>61</td><td>63</td><td>59</td><td>68</td><td>66</td><td>70</td><td>72</td><td>75</td><td>687</td></tr>
-      <tr><td>9</td><td>Phan Ngọc I</td><td>110</td><td>108</td><td>120</td><td>125</td><td>115</td><td>132</td><td>128</td><td>130</td><td>138</td><td>142</td><td>1368</td></tr>
-      <tr><td>10</td><td>Hoàng Văn K</td><td>12</td><td>18</td><td>22</td><td>20</td><td>25</td><td>30</td><td>28</td><td>31</td><td>35</td><td>40</td><td>261</td></tr>
-    </tbody>
-  </table>
+      <tr>
+        <td>1</td><td>Nguyễn Văn A</td><td>120</td><td>98</td><td>134</td><td>150</td><td>110</td><td>140</td><td>125</td><td>130</td><td>145</td><td>160</td><td>1412</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Trần Thị B</td><td>90</td><td>88</td><td>105</td><td>112</td><td>95</td><td>120</td><td>100</td><td>115</td><td>123</td><td>130</td><td>1078</td>
+      </tr>
+      <tr>
+        <td>3</td><td>Phạm Văn C</td><td>45</td><td>60</td><td>75</td><td>82</td><td>70</td><td>95</td><td>80</td><td>77</td><td>88</td><td>92</td><td>764</td>
+      </tr>
+    </table>
+  </div>
 </body>
-  </html>
+</html>
